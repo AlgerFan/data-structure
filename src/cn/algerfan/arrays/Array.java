@@ -120,8 +120,8 @@ public class Array<T> {
      * 查找数组中是否有元素e
      */
     public boolean contains(T e) {
-        for (int i = 0; i < data.length; i++) {
-            if(data[i] == e) {
+        for (T datum : data) {
+            if (datum == e) {
                 return true;
             }
         }
