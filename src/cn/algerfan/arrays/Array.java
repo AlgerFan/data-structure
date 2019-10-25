@@ -20,7 +20,7 @@ public class Array<T> {
      * @param capacity
      */
     public Array(int capacity) {
-        data = (T[])new Object[capacity];
+        data = (T[]) new Object[capacity];
         size = 0;
     }
 
@@ -34,8 +34,8 @@ public class Array<T> {
     /**
      * 获取数组的容量
      */
-    public T[] getCapacity() {
-        return data;
+    public int getCapacity() {
+        return data.length;
     }
 
     /**
@@ -102,6 +102,22 @@ public class Array<T> {
                 throw new IllegalArgumentException("Get failed. Index is illegal.");
         }
         return data[index];
+    }
+
+    /**
+     * 获取最后一个元素
+     * @return
+     */
+    public T getLast() {
+        return get(size - 1);
+    }
+
+    /**
+     * 获取第一个元素
+     * @return
+     */
+    public T getFirst() {
+        return get(0);
     }
 
     /**
