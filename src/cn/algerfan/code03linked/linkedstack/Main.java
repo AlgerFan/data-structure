@@ -1,7 +1,7 @@
-package cn.algerfan.linked.linkedstack;
+package cn.algerfan.code03linked.linkedstack;
 
-import cn.algerfan.stacks.stack.ArrayStack;
-import cn.algerfan.stacks.stack.Stack;
+import cn.algerfan.code02stacks.stack.ArrayStack;
+import cn.algerfan.code02stacks.stack.Stack;
 
 import java.util.Random;
 

@@ -1,7 +1,7 @@
-package cn.algerfan.linked.linkedstack;
+package cn.algerfan.code03linked.linkedstack;
 
-import cn.algerfan.linked.linked.LinkedList;
-import cn.algerfan.stacks.stack.Stack;
+import cn.algerfan.code03linked.linked.LinkedList;
+import cn.algerfan.code02stacks.stack.Stack;
 
 /**
  * @author algerfan

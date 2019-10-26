@@ -1,6 +1,6 @@
-package cn.algerfan.linked.linkedqueue;
+package cn.algerfan.code03linked.linkedqueue;
 
-import cn.algerfan.queues.Queue;
+import cn.algerfan.code02queues.Queue;
 
 /**
  * @author algerfan

@@ -1,6 +1,6 @@
-package cn.algerfan.stacks.leetcode20;
+package cn.algerfan.code02stacks.leetcode20;
 
-import cn.algerfan.stacks.stack.ArrayStack;
+import cn.algerfan.code02stacks.stack.ArrayStack;
 
 /**
  * @author algerfan

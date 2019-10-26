@@ -1,4 +1,4 @@
-package cn.algerfan.arrays;
+package cn.algerfan.code01arrays;
 
 /**
  * @author algerfan

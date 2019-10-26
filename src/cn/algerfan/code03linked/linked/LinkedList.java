@@ -1,4 +1,4 @@
-package cn.algerfan.linked.linked;
+package cn.algerfan.code03linked.linked;
 
 /**
  * @author algerfan

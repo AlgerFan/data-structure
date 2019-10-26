@@ -1,4 +1,4 @@
-package cn.algerfan.stacks.stack;
+package cn.algerfan.code02stacks.stack;
 
 /**
  * @author algerfan

@@ -1,20 +1,20 @@
-package cn.algerfan.stacks.stack;
+package cn.algerfan.code02queues;
 
-import cn.algerfan.arrays.Array;
+import cn.algerfan.code01arrays.Array;
 
 /**
  * @author algerfan
- * @date 2019/10/24 20:52
+ * @date 2019/10/24 22:10
  */
-public class ArrayStack<T> implements Stack<T> {
+public class ArrayQueue<T> implements Queue<T> {
 
     private Array<T> array;
 
-    public ArrayStack() {
+    public ArrayQueue() {
         array = new Array<>();
     }
 
-    public ArrayStack(int capacity) {
+    public ArrayQueue(int capacity) {
         array = new Array<>(capacity);
     }
 
@@ -33,33 +33,45 @@ public class ArrayStack<T> implements Stack<T> {
     }
 
     @Override
-    public void push(T t) {
+    public void enqueue(T t) {
         array.addLast(t);
     }
 
     @Override
-    public T pop() {
-        return array.removeLast();
+    public T dequeue() {
+        return array.removeFirst();
     }
 
     @Override
-    public T peek() {
-        return array.getLast();
+    public T getFront() {
+        return array.getFirst();
     }
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Stack: ");
-        stringBuilder.append("[");
+        stringBuilder.append("Queue: ");
+        stringBuilder.append("front [");
         for (int i = 0; i < array.getSize(); i++) {
             stringBuilder.append(array.get(i));
             if(i != array.getSize() - 1) {
                 stringBuilder.append(", ");
             }
         }
-        stringBuilder.append("] top");
+        stringBuilder.append("] tail");
         return stringBuilder.toString();
+    }
+
+    public static void main(String[] args) {
+        ArrayQueue<Integer> queue = new ArrayQueue<>();
+        for (int i = 0; i < 10; i++) {
+            queue.enqueue(i);
+            System.out.println(queue);
+            if(i % 3 == 2) {
+                queue.dequeue();
+                System.out.println(queue);
+            }
+        }
     }
 
 }
