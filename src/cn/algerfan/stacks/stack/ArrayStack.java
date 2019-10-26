@@ -8,7 +8,7 @@ import cn.algerfan.arrays.Array;
  */
 public class ArrayStack<T> implements Stack<T> {
 
-    Array<T> array;
+    private Array<T> array;
 
     public ArrayStack() {
         array = new Array<>();

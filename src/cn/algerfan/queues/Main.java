@@ -1,5 +1,7 @@
 package cn.algerfan.queues;
 
+import cn.algerfan.linked.linkedqueue.LinkedListQueue;
+
 import java.util.Random;
 
 /**
@@ -29,12 +31,18 @@ public class Main {
 
     public static void main(String[] args) {
         int opCount = 100000;
+        //测试队列
         ArrayQueue<Integer> arrayQueue = new ArrayQueue<>();
         double testQueue1 = testQueue(arrayQueue, opCount);
         System.out.println("ArrayQueue: "+ testQueue1 +"s");
+        //测试循环队列
         LoopQueue<Integer> loopQueue = new LoopQueue<>();
         double testQueue2 = testQueue(loopQueue, opCount);
         System.out.println("LoopQueue: "+ testQueue2 +"s");
+        //测试链表队列
+        LinkedListQueue<Integer> linkedListQueue = new LinkedListQueue<>();
+        double testQueue3 = testQueue(linkedListQueue, opCount);
+        System.out.println("LinkedListQueue: "+ testQueue3 +"s");
     }
 
 }

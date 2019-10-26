@@ -53,18 +53,18 @@ public class Array<T> {
     }
 
     /**
-     * 向所有元素后添加一个元素
+     * 向所有元素前添加一个元素
      * @param e
      */
     public void addFirst(T e) {
-        add(size, e);
+        add(0, e);
     }
 
     /**
-     * 向所有元素前添加一个元素
+     * 向所有元素后添加一个元素
      */
     public void addLast(T e) {
-        add(0, e);
+        add(size, e);
     }
 
     /**
