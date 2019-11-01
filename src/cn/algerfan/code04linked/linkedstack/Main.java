@@ -1,4 +1,4 @@
-package cn.algerfan.code03linked.linkedstack;
+package cn.algerfan.code04linked.linkedstack;
 
 import cn.algerfan.code02stacks.stack.ArrayStack;
 import cn.algerfan.code02stacks.stack.Stack;

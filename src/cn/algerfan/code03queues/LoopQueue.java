@@ -1,4 +1,4 @@
-package cn.algerfan.code02queues;
+package cn.algerfan.code03queues;
 
 /**
  * @author algerfan

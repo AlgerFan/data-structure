@@ -1,6 +1,6 @@
-package cn.algerfan.code03linked.linkedstack;
+package cn.algerfan.code04linked.linkedstack;
 
-import cn.algerfan.code03linked.linked.LinkedList;
+import cn.algerfan.code04linked.linked.LinkedList;
 import cn.algerfan.code02stacks.stack.Stack;
 
 /**

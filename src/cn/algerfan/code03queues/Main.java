@@ -1,6 +1,6 @@
-package cn.algerfan.code02queues;
+package cn.algerfan.code03queues;
 
-import cn.algerfan.code03linked.linkedqueue.LinkedListQueue;
+import cn.algerfan.code04linked.linkedqueue.LinkedListQueue;
 
 import java.util.Random;
 
