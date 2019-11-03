@@ -10,6 +10,7 @@ public class LoopQueue<T> implements Queue {
     private int front, tail;
     private int size;
 
+    @SuppressWarnings("unchecked")
     public LoopQueue(int capacity) {
         data = (T[]) new Object[capacity + 1];
         front = 0;
@@ -35,6 +36,7 @@ public class LoopQueue<T> implements Queue {
         return front == tail;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public void enqueue(Object t) {
         if((tail + 1) % data.length == front) {
@@ -68,6 +70,7 @@ public class LoopQueue<T> implements Queue {
         return data[front];
     }
 
+    @SuppressWarnings("unchecked")
     private void resize(int newCapacity) {
         T[] newData = (T[]) new Object[newCapacity + 1];
         for (int i = 0; i < size; i++) {
