@@ -302,6 +302,59 @@ public class Bst<T extends Comparable<T>> {
         return node;
     }
 
+    /**
+     * 从二分搜索树中删除元素为t的节点
+     * @param t
+     */
+    public void remove(T t) {
+        root = remove(root, t);
+    }
+
+    /**
+     * 删除以node为根的二分搜索树值为e的节点，递归
+     * 返回删除节点后新的二分搜索树的根
+     * @param node
+     * @param t
+     */
+    private Node remove(Node node, T t) {
+        if(node == null) {
+            return null;
+        }
+        if(t.compareTo(node.t) < 0) {
+            node.left = remove(node.left, t);
+            return node;
+        } else if(t.compareTo(node.t) > 0) {
+            node.right = remove(node.right, t);
+            return node;
+        } else {
+            //待删除的节点左子树为空的情况
+            if(node.left == null) {
+                Node rightNode = node.right;
+                node.right = null;
+                size --;
+                return rightNode;
+            }
+            //待删除的节点右子树为空的情况
+            if(node.right == null) {
+                Node rightNode = node.left;
+                node.left = null;
+                size --;
+                return rightNode;
+            }
+            /*
+            待删除节点的左子树和右子树都不为空的情况
+            找到比待删除节点大的最小节点，即找到待删除节点右子树的最小节点
+            用这个节点代替待删除节点的位置
+             */
+            Node successor = minimum(node.right);
+            successor.right = removeMin(node.right);
+            successor.left = node.left;
+
+            node.left = node.right = null;
+            return successor;
+        }
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
