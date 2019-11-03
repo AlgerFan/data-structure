@@ -21,7 +21,8 @@ public class Main {
         array.remove(2);
         array.removeElement(4);
         System.out.println(array);
-        array.removeFirst();
+        Integer integer = array.removeFirst();
+        System.out.println(integer);
         System.out.println(array);
     }
 }

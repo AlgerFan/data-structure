@@ -19,6 +19,7 @@ public class Array<T> {
      * 构造函数，传入数组的容量capacity构造Array
      * @param capacity
      */
+    @SuppressWarnings("unchecked")
     public Array(int capacity) {
         data = (T[]) new Object[capacity];
         size = 0;
@@ -165,8 +166,11 @@ public class Array<T> {
             throw new IllegalArgumentException("Remove failed. Index is illegal.");
         }
         T ret = data[index];
-        for (int i = index + 1; i < size; i++) {
+        /*for (int i = index + 1; i < size; i++) {
             data[i-1] = data[i];
+        }*/
+        if (size - index + 1 >= 0) {
+            System.arraycopy(data, index + 1, data, index, size - index + 1);
         }
         size--;
         data[size] = null;
