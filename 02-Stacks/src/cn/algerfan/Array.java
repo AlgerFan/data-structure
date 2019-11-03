@@ -19,6 +19,7 @@ public class Array<T> {
      * 构造函数，传入数组的容量capacity构造Array
      * @param capacity
      */
+    @SuppressWarnings("unchecked")
     public Array(int capacity) {
         data = (T[]) new Object[capacity];
         size = 0;
@@ -79,17 +80,18 @@ public class Array<T> {
         if(size == data.length) {
             resize(data.length * 2);
         }
-        for (int i = size-1; i >= index; i--) {
-            data[i + 1] = data[i];
+        if (size - index >= 0) {
+            System.arraycopy(data, index, data, index + 1, size - index);
         }
         data[index] = e;
         size++;
     }
 
+    @SuppressWarnings("unchecked")
     private void resize(int newCapacity) {
         T[] newData = (T[])new Object[newCapacity];
-        for (int i = 0; i < size; i++) {
-            newData[i] = data[i];
+        if (size >= 0) {
+            System.arraycopy(data, 0, newData, 0, size);
         }
         data = newData;
     }
@@ -165,8 +167,11 @@ public class Array<T> {
             throw new IllegalArgumentException("Remove failed. Index is illegal.");
         }
         T ret = data[index];
-        for (int i = index + 1; i < size; i++) {
+        /*for (int i = index + 1; i < size; i++) {
             data[i-1] = data[i];
+        }*/
+        if (size - index + 1 >= 0) {
+            System.arraycopy(data, index + 1, data, index, size - index + 1);
         }
         size--;
         data[size] = null;
