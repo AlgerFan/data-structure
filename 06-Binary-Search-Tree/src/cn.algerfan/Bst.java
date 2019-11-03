@@ -212,6 +212,96 @@ public class Bst<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * 查找二分搜索树的最小元素
+     */
+    public T minimum() {
+        if(size == 0) {
+            throw new IllegalArgumentException("Bst is empty");
+        }
+        return minimum(root).t;
+    }
+
+    /**
+     * 查找以node为根节点的二分搜索树的最小元素
+     */
+    private Node minimum(Node node) {
+        if(node.left == null) {
+            return node;
+        }
+        return minimum(node.left);
+    }
+
+    /**
+     * 查找二分搜索树的最大元素
+     */
+    public T maximum() {
+        if(size == 0) {
+            throw new IllegalArgumentException("Bst is empty");
+        }
+        return maximum(root).t;
+    }
+
+    /**
+     * 查找以node为根节点的二分搜索树的最大元素
+     */
+    private Node maximum(Node node) {
+        if(node.right == null) {
+            return node;
+        }
+        return maximum(node.right);
+    }
+
+    /**
+     * 从二分搜索树中删除最小的节点，并返回删除的节点
+     */
+    public T removeMin() {
+        T ret = minimum();
+        root = removeMin(root);
+        return ret;
+    }
+
+    /**
+     *  删除以node为根的二分搜索树的最小节点
+     *  返回删除节点后新的二分搜索树的根
+     * @param node
+     */
+    private Node removeMin(Node node) {
+        if(node.left == null) {
+            Node rightNode = node.right;
+            node.right = null;
+            size--;
+            return rightNode;
+        }
+        node.left = removeMin(node.left);
+        return node;
+    }
+
+    /**
+     * 从二分搜索树中删除最大的节点，并返回删除的节点
+     */
+    public T removeMax() {
+        T ret = maximum();
+        root = removeMax(root);
+        return ret;
+    }
+
+    /**
+     *  删除以node为根的二分搜索树的最大节点
+     *  返回删除节点后新的二分搜索树的根
+     * @param node
+     */
+    private Node removeMax(Node node) {
+        if(node.right == null) {
+            Node rightNode = node.left;
+            node.left = null;
+            size--;
+            return rightNode;
+        }
+        node.right = removeMax(node.right);
+        return node;
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
