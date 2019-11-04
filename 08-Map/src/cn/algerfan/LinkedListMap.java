@@ -1,5 +1,10 @@
 package cn.algerfan;
 
+import cn.algerfan.map.Map;
+import cn.algerfan.util.FileOperation;
+
+import java.util.ArrayList;
+
 /**
  * @author algerfan
  * @date 2019/11/4 21:30
@@ -18,8 +23,7 @@ public class LinkedListMap<K, V> implements Map<K, V> {
         }
 
         public Node(K key, V value) {
-            this.key = key;
-            this.value = value;
+            this(key, value, null);
         }
 
         public Node() {
@@ -110,4 +114,25 @@ public class LinkedListMap<K, V> implements Map<K, V> {
     public boolean isEmpty() {
         return size == 0;
     }
+
+    public static void main(String[] args){
+        System.out.println("Pride and Prejudice");
+        ArrayList<String> words = new ArrayList<>();
+        if(FileOperation.readFile("/media/algerfan/工作/javaCode/dataStructure/08-Map/pride-and-prejudice.txt", words)) {
+            System.out.println("Total words: " + words.size());
+            LinkedListMap<String, Integer> map = new LinkedListMap<>();
+            for (String word : words) {
+                if (map.contains(word)) {
+                    map.set(word, map.get(word) + 1);
+                } else {
+                    map.add(word, 1);
+                }
+            }
+            System.out.println("Total different words: " + map.getSize());
+            System.out.println("Frequency of pride: " + map.get("pride"));
+            System.out.println("Frequency of prejudice: " + map.get("prejudice"));
+        }
+        System.out.println();
+    }
+
 }

@@ -1,4 +1,4 @@
-package cn.algerfan;
+package cn.algerfan.util;
 
 import java.io.BufferedInputStream;
 import java.io.File;

@@ -1,4 +1,4 @@
-package cn.algerfan;
+package cn.algerfan.map;
 
 /**
  * @author algerfan
