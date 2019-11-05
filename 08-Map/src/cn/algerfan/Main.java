@@ -1,5 +1,7 @@
 package cn.algerfan;
 
+import cn.algerfan.map.BstMap;
+import cn.algerfan.map.LinkedListMap;
 import cn.algerfan.map.Map;
 import cn.algerfan.util.FileOperation;
 

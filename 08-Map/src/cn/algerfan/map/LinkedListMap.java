@@ -1,6 +1,5 @@
-package cn.algerfan;
+package cn.algerfan.map;
 
-import cn.algerfan.map.Map;
 import cn.algerfan.util.FileOperation;
 
 import java.util.ArrayList;
